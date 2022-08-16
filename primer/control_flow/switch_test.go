@@ -1,4 +1,4 @@
-package flow_control
+package control_flow
 
 import (
 	"fmt"

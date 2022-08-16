@@ -1,4 +1,4 @@
-package bool
+package boolean
 
 import "fmt"
 
