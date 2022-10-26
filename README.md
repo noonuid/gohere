@@ -60,6 +60,8 @@ Go primer, data structures and algorithms.
 
 ### Testing
 
+### Error Handling
+
 ### Concurrency
 
 #### Goroutine
