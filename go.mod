@@ -1,3 +1,3 @@
-module github.com/anchorportal/go
+module github.com/noonuid/go
 
 go 1.17

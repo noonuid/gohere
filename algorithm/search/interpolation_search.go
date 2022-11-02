@@ -1,7 +1,7 @@
 package search
 
 import (
-	"github.com/anchorportal/go/algorithm/sort"
+	"github.com/noonuid/go/algorithm/sort"
 )
 
 // 内插搜索，改良版的二分搜索，这个算法在数组中的值都是均匀分布时性能最好

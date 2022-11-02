@@ -1,7 +1,7 @@
 package problem0094
 
 import (
-	"github.com/anchorportal/go/leetcode/structure"
+	"github.com/noonuid/go/leetcode/structure"
 )
 
 type TreeNode = structure.TreeNode
@@ -15,7 +15,7 @@ type TreeNode = structure.TreeNode
  * }
  */
 
-//  法一：使用递归完成
+// 法一：使用递归完成
 func inorderTraversal(root *TreeNode) []int {
 	var route = make([]int, 0)
 	inorder(root, &route)

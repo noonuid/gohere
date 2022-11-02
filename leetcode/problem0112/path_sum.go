@@ -1,7 +1,7 @@
 package problem0112
 
 import (
-	"github.com/anchorportal/go/leetcode/structure"
+	"github.com/noonuid/go/leetcode/structure"
 )
 
 type TreeNode = structure.TreeNode

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/anchorportal/go/nowcoder/structure"
+	"github.com/noonuid/go/nowcoder/structure"
 )
 
 func TestNc078(t *testing.T) {

@@ -1,7 +1,7 @@
 package nc081
 
 import (
-	"github.com/anchorportal/go/nowcoder/structure"
+	"github.com/noonuid/go/nowcoder/structure"
 )
 
 type TreeNode = structure.TreeNode

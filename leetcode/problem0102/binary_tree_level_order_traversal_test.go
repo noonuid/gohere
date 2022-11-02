@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/anchorportal/go/leetcode/structure"
+	"github.com/noonuid/go/leetcode/structure"
 )
 
 var testCases = []struct {
