@@ -11,18 +11,18 @@ import (
 
 func signalHandler() {
 	ch := make(chan os.Signal, 1)
-	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGUSR2)
+	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
 	for {
 		sig := <-ch
-		fmt.Println("Received signal:", sig)
+		fmt.Println("received signal:", sig)
 		switch sig {
 		case syscall.SIGINT, syscall.SIGTERM:
-			println("Received the stop signal, the program will exit.")
+			println("the program will exit")
 			signal.Stop(ch)
 			os.Exit(0)
 			return
 		default:
-			println("Received the user defined signal 2, the program will continue.")
+			println("the program will continue")
 			continue
 		}
 	}
