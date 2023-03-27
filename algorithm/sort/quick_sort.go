@@ -1,28 +1,27 @@
 package sort
 
+// 快速排序
 func QuickSort(nums []int) []int {
-	quick(nums, 0, len(nums)-1)
-	return nums
-}
-
-func quick(nums []int, low, high int) {
-	if low < high {
-		var index = partition(nums, low, high)
-
-		quick(nums, low, index-1)
-		quick(nums, index+1, high)
+	if len(nums) <= 1 {
+		return nums
 	}
+
+	index := partition(nums)
+	QuickSort(nums[:index])
+	QuickSort(nums[index+1:])
+
+	return nums
 }
 
 // 根据枢轴量划分切片，返回枢轴量在切片中的索引
 // 该划分算法可以保证返回的索引处存储的一定是枢轴量
-func partition(nums []int, low, high int) int {
+func partition(nums []int) int {
 	// 选取枢轴量
-	var pivot = nums[high]
+	pivot := nums[len(nums)-1]
 
-	// i 会始终指向在 j 之前的并且小于枢轴量的最后一个元素
-	var i = low - 1
-	for j := low; j <= high; j++ {
+	// i 会始终指向在 j 之前的并且小于或等于枢轴量的最后一个元素
+	i := -1
+	for j := 0; j < len(nums); j++ {
 		if nums[j] <= pivot {
 			i++
 			nums[i], nums[j] = nums[j], nums[i]
@@ -32,42 +31,34 @@ func partition(nums []int, low, high int) int {
 	return i
 }
 
-// 第二种快速排序，与第一种的分区算法不同
-func QuickSortI(nums []int) []int {
-	quickI(nums, 0, len(nums)-1)
+// 快速排序，分区算法使用双指针
+func QuickSortTwoPointer(nums []int) []int {
+	if len(nums) <= 1 {
+		return nums
+	}
+
+	index := partitionTwoPointer(nums)
+	QuickSortTwoPointer(nums[:index])
+	QuickSortTwoPointer(nums[index+1:])
 
 	return nums
 }
 
-func quickI(nums []int, low, high int) {
-	if low < high {
-		var index = partitionI(nums, low, high)
-
-		quickI(nums, low, index-1)
-		quickI(nums, index, high)
-	}
-}
-
-// 该划分算法不能保证返回的索引处存储的一定是枢轴量
-// 只能保证索引及以上为大于等于枢轴量的元素，索引以下为小于等于枢轴量的元素
-func partitionI(nums []int, low, high int) int {
-	// 选取枢轴量
-	var pivot = nums[(low+high)/2]
-
-	for low <= high {
-		for nums[low] < pivot {
+// 使用双指针根据枢轴量划分切片，返回枢轴量在切片中的索引
+// 该划分算法可以保证返回的索引处存储的一定是枢轴量
+func partitionTwoPointer(nums []int) int {
+	low, high := 0, len(nums)-1
+	pivot := nums[high]
+	for low < high {
+		for low < high && nums[low] <= pivot {
 			low++
 		}
-		for nums[high] > pivot {
+		nums[high] = nums[low]
+		for high > low && nums[high] >= pivot {
 			high--
 		}
-		if low <= high {
-			nums[low], nums[high] = nums[high], nums[low]
-
-			low++
-			high--
-		}
+		nums[low] = nums[high]
 	}
-
+	nums[low] = pivot
 	return low
 }
