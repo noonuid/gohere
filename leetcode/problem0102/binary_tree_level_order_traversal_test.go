@@ -28,7 +28,7 @@ var testCases = []struct {
 func TestLevelOrder(t *testing.T) {
 	for caseIndex, testCase := range testCases {
 		// 方法的返回值
-		got := levelOrder(structure.Ints2TreeNode(testCase.input))
+		got := levelOrder(structure.Ints2Tree(testCase.input))
 
 		// 如果方法返回的实际值与期望值不相等，则输出错误对应的测试用例信息
 		if !reflect.DeepEqual(got, testCase.want) {

@@ -36,7 +36,7 @@ var testCases = []struct {
 func TestPreorderTraversal(t *testing.T) {
 	for caseIndex, testCase := range testCases {
 		// 方法的返回值
-		got := preorderTraversal(structure.Ints2TreeNode(testCase.input))
+		got := preorderTraversal(structure.Ints2Tree(testCase.input))
 
 		// 如果方法返回的实际值与期望值不相等，则输出错误对应的测试用例信息
 		if !reflect.DeepEqual(got, testCase.want) {
@@ -49,7 +49,7 @@ func TestPreorderTraversal(t *testing.T) {
 func TestPreorderTraversalIterative(t *testing.T) {
 	for caseIndex, testCase := range testCases {
 		// 方法的返回值
-		got := preorderTraversalIterative(structure.Ints2TreeNode(testCase.input))
+		got := preorderTraversalIterative(structure.Ints2Tree(testCase.input))
 
 		// 如果方法返回的实际值与期望值不相等，则输出错误对应的测试用例信息
 		if !reflect.DeepEqual(got, testCase.want) {

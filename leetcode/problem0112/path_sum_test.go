@@ -1,52 +1,48 @@
 package problem0112
 
 import (
-	"fmt"
+	"reflect"
 	"testing"
 
 	"github.com/noonuid/go/leetcode/structure"
 )
 
-type question112 struct {
-	para112
-	ans112
-}
+var NULL = structure.NULL
 
-// para 是参数
-// one 代表第一个参数
-type para112 struct {
-	one []int
-	sum int
-}
-
-// ans 是答案
-// one 代表第一个答案
-type ans112 struct {
-	one bool
-}
-
-func Test_Problem112(t *testing.T) {
-
-	qs := []question112{
-
+func testFramework(t *testing.T, testFn func(*TreeNode, int) bool) {
+	testCases := []struct {
+		root      *TreeNode
+		targetSum int
+		want      bool
+	}{
 		{
-			para112{[]int{}, 0},
-			ans112{false},
+			root:      structure.Ints2Tree([]int{5, 4, 8, 11, NULL, 13, 4, 7, 2, NULL, NULL, NULL, 1}),
+			targetSum: 22,
+			want:      true,
 		},
-
 		{
-			para112{[]int{5, 4, 8, 11, structure.NULL, 13, 4, 7, 2, structure.NULL, structure.NULL, structure.NULL, 1}, 22},
-			ans112{true},
+			root:      structure.Ints2Tree([]int{1, 2, 3}),
+			targetSum: 5,
+			want:      false,
+		},
+		{
+			root:      structure.Ints2Tree([]int{}),
+			targetSum: 0,
+			want:      false,
 		},
 	}
 
-	fmt.Printf("------------------------Leetcode Problem 112------------------------\n")
-
-	for _, q := range qs {
-		_, p := q.ans112, q.para112
-		fmt.Printf("【input】:%v      ", p)
-		root := structure.Ints2TreeNode(p.one)
-		fmt.Printf("【output】:%v      \n", hasPathSum(root, p.sum))
+	for caseIndex, testCase := range testCases {
+		// 被测方法的返回值
+		got := testFn(testCase.root, testCase.targetSum)
+		// 如果方法返回的实际值与期望值不相等，则输出错误对应的测试用例信息
+		if !reflect.DeepEqual(got, testCase.want) {
+			t.Errorf("\ncaseIndex: %d, testCase: %v\ngot: %v, want: %v",
+				caseIndex, testCase, got, testCase.want)
+		}
 	}
-	fmt.Printf("\n\n\n")
+}
+
+func TestPathSum(t *testing.T) {
+	testFramework(t, hasPathSum)
 }

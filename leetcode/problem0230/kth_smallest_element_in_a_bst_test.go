@@ -27,7 +27,7 @@ func TestProblem0230(t *testing.T) {
 
 	t.Run("kthSmallest", func(t *testing.T) {
 		for caseIndex, testCase := range testCases {
-			actual := kthSmallest(structure.Ints2TreeNode(testCase.root), testCase.k)
+			actual := kthSmallest(structure.Ints2Tree(testCase.root), testCase.k)
 
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("\ncaseIndex: %d, testCase: %v\nexpected: %d, actual: %d",
