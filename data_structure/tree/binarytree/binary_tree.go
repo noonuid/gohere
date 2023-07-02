@@ -6,10 +6,11 @@ type TreeNode struct {
 	right *TreeNode
 }
 
-// 用于在整数切片中表示空的树节点
+// 用于在整数切片中表示空的树节点。
 var Null = -1 << 63
 
-// 将整型切片转换为二叉树，并返回二叉树的根节点
+// 将整型切片转换为二叉树，并返回二叉树的根节点。
+// 切片索引为树节点在对应的完全二叉树中的编号。
 func IntsToTree(nums []int) *TreeNode {
 	var n = len(nums)
 	if n == 0 {
@@ -20,19 +21,25 @@ func IntsToTree(nums []int) *TreeNode {
 	var queue = make([]*TreeNode, 1, len(nums))
 	queue[0] = root
 
-	for i := 1; i < n; {
+	for i := 1; i < n && len(queue) > 0; {
 		var node = queue[0]
 		queue = queue[1:]
 
-		if i < n && nums[i] != Null {
+		if nums[i] != Null && node != nil {
 			node.left = &TreeNode{value: nums[i]}
 			queue = append(queue, node.left)
+		} else {
+			queue = append(queue, nil)
 		}
 		i++
 
-		if i < n && nums[i] != Null {
-			node.right = &TreeNode{value: nums[i]}
-			queue = append(queue, node.right)
+		if i < n {
+			if nums[i] != Null && node != nil {
+				node.right = &TreeNode{value: nums[i]}
+				queue = append(queue, node.right)
+			} else {
+				queue = append(queue, nil)
+			}
 		}
 		i++
 	}
@@ -40,9 +47,49 @@ func IntsToTree(nums []int) *TreeNode {
 	return root
 }
 
-// 将二叉树转换为整型切片，切片中为二叉树的层序遍历结果
+// Ints2Tree 根据 []int 生成树，并返回树的根节点。
+// 切片索引为树节点在对应的完全二叉树中的编号。
+// 通过递归实现。
+func IntsToTree_recurse(ints []int) *TreeNode {
+	n := len(ints)
+
+	var recurse func(i int) *TreeNode
+	recurse = func(i int) *TreeNode {
+		if i >= n || (i < n && ints[i] == Null) {
+			return nil
+		}
+
+		node := &TreeNode{
+			value: ints[i],
+		}
+		node.left = recurse(2*i + 1)
+		node.right = recurse(2*i + 2)
+		return node
+	}
+
+	root := recurse(0)
+	return root
+}
+
+// TreeToInts converts a tree to slice.
+// Use NULL to represent the nil.
 func TreeToInts(root *TreeNode) []int {
-	return LevelOrderTraversal(root)
+	res := []int{}
+
+	var traverse func(node *TreeNode, s *[]int, i int)
+	traverse = func(node *TreeNode, s *[]int, i int) {
+		if node != nil {
+			for len(*s) < i+1 {
+				*s = append(*s, Null)
+			}
+			(*s)[i] = node.value
+			traverse(node.left, s, 2*i+1)
+			traverse(node.right, s, 2*i+2)
+		}
+	}
+
+	traverse(root, &res, 0)
+	return res
 }
 
 // 使用循环层序遍历二叉树
