@@ -7,6 +7,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/rabbitmq/amqp091-go v1.8.0
 	github.com/segmentio/kafka-go v0.4.39
+	golang.org/x/exp v0.0.0-20230810033253-352e893a4cad
 	gorm.io/driver/sqlite v1.4.4
 	gorm.io/gorm v1.24.6
 )
