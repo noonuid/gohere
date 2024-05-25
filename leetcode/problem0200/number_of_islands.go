@@ -1,5 +1,7 @@
 package problem0200
 
+import "container/list"
+
 // 200. 岛屿数量
 
 // 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
@@ -9,31 +11,37 @@ package problem0200
 // 此外，你可以假设该网格的四条边均被水包围。
 
 // 广度优先搜索。
-// 超出内存限制。
 func numIslands_bfs(grid [][]byte) int {
-	rows, cols := len(grid), len(grid[0])
-	type info struct{ row, col int }
+	m, n := len(grid), len(grid[0])
 	num := 0
-	for row := 0; row < rows; row++ {
-		for col := 0; col < cols; col++ {
-			if grid[row][col] == '1' {
+	type pos struct{ row, col int }
+	queue := list.New()
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if grid[i][j] == '1' {
 				num++
-				queue := []info{{row, col}}
-				for len(queue) > 0 {
-					i, j := queue[0].row, queue[0].col
-					grid[i][j] = '0'
-					queue = queue[1:]
-					if i-1 > -1 && grid[i-1][j] == '1' {
-						queue = append(queue, info{i - 1, j})
+
+				queue.PushBack(pos{i, j})
+				grid[i][j] = '0'
+				for queue.Len() > 0 {
+					front := queue.Front()
+					row, col := front.Value.(pos).row, front.Value.(pos).col
+					queue.Remove(front)
+					if row-1 > -1 && grid[row-1][col] == '1' {
+						grid[row-1][col] = '0'
+						queue.PushBack(pos{row - 1, col})
 					}
-					if j+1 < cols && grid[i][j+1] == '1' {
-						queue = append(queue, info{i, j + 1})
+					if col+1 < n && grid[row][col+1] == '1' {
+						grid[row][col+1] = '0'
+						queue.PushBack(pos{row, col + 1})
 					}
-					if i+1 < rows && grid[i+1][j] == '1' {
-						queue = append(queue, info{i + 1, j})
+					if row+1 < m && grid[row+1][col] == '1' {
+						grid[row+1][col] = '0'
+						queue.PushBack(pos{row + 1, col})
 					}
-					if j-1 > -1 && grid[i][j-1] == '1' {
-						queue = append(queue, info{i, j - 1})
+					if col-1 > -1 && grid[row][col-1] == '1' {
+						grid[row][col-1] = '0'
+						queue.PushBack(pos{row, col - 1})
 					}
 				}
 			}
@@ -44,32 +52,24 @@ func numIslands_bfs(grid [][]byte) int {
 
 // 深度优先搜索。
 func numIslands_dfs(grid [][]byte) int {
-	rows, cols := len(grid), len(grid[0])
+	m, n := len(grid), len(grid[0])
 	var dfs func(row, col int)
 	dfs = func(row, col int) {
-		if grid[row][col] == '0' {
+		if row < 0 || col < 0 || row >= m || col >= n || grid[row][col] == '0' {
 			return
 		}
 		grid[row][col] = '0'
-		if row-1 > -1 {
-			dfs(row-1, col)
-		}
-		if col+1 < cols {
-			dfs(row, col+1)
-		}
-		if row+1 < rows {
-			dfs(row+1, col)
-		}
-		if col-1 > -1 {
-			dfs(row, col-1)
-		}
+		dfs(row-1, col)
+		dfs(row, col+1)
+		dfs(row+1, col)
+		dfs(row, col-1)
 	}
 	num := 0
-	for row := 0; row < rows; row++ {
-		for col := 0; col < cols; col++ {
-			if grid[row][col] == '1' {
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if grid[i][j] == '1' {
 				num++
-				dfs(row, col)
+				dfs(i, j)
 			}
 		}
 	}
