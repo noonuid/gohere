@@ -1,6 +1,6 @@
 module github.com/noonuid/go
 
-go 1.20
+go 1.26.5
 
 require (
 	github.com/Shopify/sarama v1.38.1
