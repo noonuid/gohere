@@ -2,8 +2,8 @@ package structure
 
 import "fmt"
 
-// NULL 方便添加测试数据。
-var NULL = -1 << 63
+// Null 方便添加测试数据。
+var Null = -1 << 63
 
 type TreeNode struct {
 	Val   int
@@ -30,13 +30,13 @@ func Ints2Tree(ints []int) *TreeNode {
 		node := queue[0]
 		queue = queue[1:]
 
-		if ints[i] != NULL {
+		if ints[i] != Null {
 			node.Left = &TreeNode{Val: ints[i]}
 			queue = append(queue, node.Left)
 		}
 		i++
 
-		if i < n && ints[i] != NULL {
+		if i < n && ints[i] != Null {
 			node.Right = &TreeNode{Val: ints[i]}
 			queue = append(queue, node.Right)
 		}
@@ -47,7 +47,7 @@ func Ints2Tree(ints []int) *TreeNode {
 }
 
 // Tree2Ints converts a tree to slice.
-// Use NULL to represent the nil.
+// Use Null to represent the nil.
 func Tree2Ints(root *TreeNode) []int {
 	res := []int{}
 	if root == nil {
@@ -65,10 +65,10 @@ func Tree2Ints(root *TreeNode) []int {
 			queue = append(queue, node.Left)
 			queue = append(queue, node.Right)
 		} else {
-			res = append(res, NULL)
+			res = append(res, Null)
 		}
 	}
-	for len(res) > 0 && res[len(res)-1] == NULL {
+	for len(res) > 0 && res[len(res)-1] == Null {
 		res = res[:len(res)-1]
 	}
 

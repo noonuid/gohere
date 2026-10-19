@@ -12,7 +12,7 @@ var testCases = []struct {
 	want  []int
 }{
 	{
-		input: []int{1, structure.NULL, 2, 3},
+		input: []int{1, structure.Null, 2, 3},
 		want:  []int{1, 2, 3},
 	},
 	{
@@ -28,7 +28,7 @@ var testCases = []struct {
 		want:  []int{1, 2},
 	},
 	{
-		input: []int{1, structure.NULL, 2},
+		input: []int{1, structure.Null, 2},
 		want:  []int{1, 2},
 	},
 }

@@ -20,7 +20,7 @@ var testCases = []struct {
 		want:  [][]int{{1}},
 	},
 	{
-		input: []int{3, 9, 20, structure.NULL, structure.NULL, 15, 7},
+		input: []int{3, 9, 20, structure.Null, structure.Null, 15, 7},
 		want:  [][]int{{3}, {9, 20}, {15, 7}},
 	},
 }

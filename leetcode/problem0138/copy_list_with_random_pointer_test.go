@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-// NULL 方便添加测试数据。
-var NULL = -1 << 63
+// null 方便添加测试数据。
+var null = -1 << 63
 
 func list2Array(head *Node) [][]int {
 	// 链条深度限制，链条深度超出此限制，会 panic。
@@ -23,7 +23,7 @@ func list2Array(head *Node) [][]int {
 			panic(msg)
 		}
 
-		randomIndex := NULL
+		randomIndex := null
 		if node.Random != nil {
 			randomIndex = 0
 			random := head
@@ -32,7 +32,7 @@ func list2Array(head *Node) [][]int {
 				random = random.Next
 			}
 			if random == nil {
-				randomIndex = NULL
+				randomIndex = null
 			}
 		}
 		result = append(result, []int{node.Val, randomIndex})
@@ -53,7 +53,7 @@ func array2List(array [][]int) *Node {
 		node = node.Next
 	}
 	for i, node := 0, head; i < len(array); i, node = i+1, node.Next {
-		if array[i][1] != NULL {
+		if array[i][1] != null {
 			randomIndex, random := 0, head
 			for randomIndex < array[i][1] {
 				randomIndex, random = randomIndex+1, random.Next
@@ -70,16 +70,16 @@ func test(t *testing.T, fn func(head *Node) *Node) {
 		want  [][]int
 	}{
 		{
-			input: [][]int{{7, NULL}, {13, 0}, {11, 4}, {10, 2}, {1, 0}},
-			want:  [][]int{{7, NULL}, {13, 0}, {11, 4}, {10, 2}, {1, 0}},
+			input: [][]int{{7, null}, {13, 0}, {11, 4}, {10, 2}, {1, 0}},
+			want:  [][]int{{7, null}, {13, 0}, {11, 4}, {10, 2}, {1, 0}},
 		},
 		{
 			input: [][]int{{1, 1}, {2, 1}},
 			want:  [][]int{{1, 1}, {2, 1}},
 		},
 		{
-			input: [][]int{{3, NULL}, {3, 0}, {3, NULL}},
-			want:  [][]int{{3, NULL}, {3, 0}, {3, NULL}},
+			input: [][]int{{3, null}, {3, 0}, {3, null}},
+			want:  [][]int{{3, null}, {3, 0}, {3, null}},
 		},
 	}
 

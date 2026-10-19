@@ -7,7 +7,7 @@ import (
 	"github.com/noonuid/go/nowcoder/structure"
 )
 
-var null = structure.NULL
+var null = structure.Null
 
 func testFramework(t *testing.T, testFunc func(*TreeNode) bool) {
 	// 测试用例。

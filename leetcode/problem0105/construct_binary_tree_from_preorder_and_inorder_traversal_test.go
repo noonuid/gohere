@@ -7,7 +7,7 @@ import (
 	"github.com/noonuid/go/leetcode/structure"
 )
 
-var NULL = structure.NULL
+var null = structure.Null
 
 func testFramework(t *testing.T, testFunc func([]int, []int) *TreeNode) {
 	// 测试用例
@@ -19,7 +19,7 @@ func testFramework(t *testing.T, testFunc func([]int, []int) *TreeNode) {
 		{
 			preorder: []int{3, 9, 20, 15, 7},
 			inorder:  []int{9, 3, 15, 20, 7},
-			want:     []int{3, 9, 20, NULL, NULL, 15, 7},
+			want:     []int{3, 9, 20, null, null, 15, 7},
 		},
 		{
 			preorder: []int{-1},

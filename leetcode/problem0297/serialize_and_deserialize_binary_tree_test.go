@@ -7,7 +7,7 @@ import (
 	"github.com/noonuid/go/leetcode/structure"
 )
 
-var null = structure.NULL
+var null = structure.Null
 
 func TestProblem0297(t *testing.T) {
 	// 测试用例。

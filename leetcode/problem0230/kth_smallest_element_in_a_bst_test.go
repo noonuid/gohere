@@ -14,12 +14,12 @@ func TestProblem0230(t *testing.T) {
 		expected int
 	}{
 		{
-			root:     []int{3, 1, 4, structure.NULL, 2},
+			root:     []int{3, 1, 4, structure.Null, 2},
 			k:        1,
 			expected: 1,
 		},
 		{
-			root:     []int{5, 3, 6, 2, 4, structure.NULL, structure.NULL, 1},
+			root:     []int{5, 3, 6, 2, 4, structure.Null, structure.Null, 1},
 			k:        3,
 			expected: 3,
 		},

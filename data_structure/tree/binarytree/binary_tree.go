@@ -72,7 +72,7 @@ func IntsToTree_recurse(ints []int) *TreeNode {
 }
 
 // TreeToInts converts a tree to slice.
-// Use NULL to represent the nil.
+// Use Null to represent the nil.
 func TreeToInts(root *TreeNode) []int {
 	res := []int{}
 

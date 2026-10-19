@@ -7,7 +7,7 @@ import (
 	"github.com/noonuid/go/leetcode/structure"
 )
 
-var null = structure.NULL
+var null = structure.Null
 
 func testFramework(t *testing.T, testFunc func(root, p, q *TreeNode) *TreeNode) {
 	// 测试用例。

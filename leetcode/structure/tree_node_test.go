@@ -31,19 +31,19 @@ func TestInts2Tree(t *testing.T) {
 			postorder: []int{1},
 		},
 		{
-			nums:      []int{1, 2, NULL, 3},
+			nums:      []int{1, 2, Null, 3},
 			preorder:  []int{1, 2, 3},
 			inorder:   []int{3, 2, 1},
 			postorder: []int{3, 2, 1},
 		},
 		{
-			nums:      []int{1, NULL, 2, NULL, 3},
+			nums:      []int{1, Null, 2, Null, 3},
 			preorder:  []int{1, 2, 3},
 			inorder:   []int{1, 2, 3},
 			postorder: []int{3, 2, 1},
 		},
 		{
-			nums:      []int{1, 2, 3, 4, NULL, NULL, 7},
+			nums:      []int{1, 2, 3, 4, Null, Null, 7},
 			preorder:  []int{1, 2, 4, 3, 7},
 			inorder:   []int{4, 2, 1, 3, 7},
 			postorder: []int{4, 2, 7, 3, 1},
@@ -91,16 +91,16 @@ func TestTree2Ints(t *testing.T) {
 			want: []int{1},
 		},
 		{
-			nums: []int{1, 2, NULL, 3},
-			want: []int{1, 2, NULL, 3},
+			nums: []int{1, 2, Null, 3},
+			want: []int{1, 2, Null, 3},
 		},
 		{
-			nums: []int{1, NULL, 2, NULL, 3},
-			want: []int{1, NULL, 2, NULL, 3},
+			nums: []int{1, Null, 2, Null, 3},
+			want: []int{1, Null, 2, Null, 3},
 		},
 		{
-			nums: []int{1, 2, 3, 4, NULL, NULL, 7},
-			want: []int{1, 2, 3, 4, NULL, NULL, 7},
+			nums: []int{1, 2, 3, 4, Null, Null, 7},
+			want: []int{1, 2, 3, 4, Null, Null, 7},
 		},
 		{
 			nums: []int{1, 2, 3, 4, 5, 6, 7, 8},

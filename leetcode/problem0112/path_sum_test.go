@@ -7,7 +7,7 @@ import (
 	"github.com/noonuid/go/leetcode/structure"
 )
 
-var NULL = structure.NULL
+var null = structure.Null
 
 func testFramework(t *testing.T, testFn func(*TreeNode, int) bool) {
 	testCases := []struct {
@@ -16,7 +16,7 @@ func testFramework(t *testing.T, testFn func(*TreeNode, int) bool) {
 		want      bool
 	}{
 		{
-			root:      structure.Ints2Tree([]int{5, 4, 8, 11, NULL, 13, 4, 7, 2, NULL, NULL, NULL, 1}),
+			root:      structure.Ints2Tree([]int{5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1}),
 			targetSum: 22,
 			want:      true,
 		},
