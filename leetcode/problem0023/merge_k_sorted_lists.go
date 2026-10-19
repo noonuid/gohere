@@ -1,6 +1,6 @@
 package problem0023
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 23. 合并 K 个升序链表
 

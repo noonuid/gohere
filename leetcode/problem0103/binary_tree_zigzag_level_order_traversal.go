@@ -1,6 +1,6 @@
 package problem0103
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 103. 二叉树的锯齿形层序遍历
 

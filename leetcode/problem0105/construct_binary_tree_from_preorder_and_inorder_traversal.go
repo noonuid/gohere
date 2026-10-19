@@ -1,6 +1,6 @@
 package problem0105
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 105. 从前序与中序遍历序列构造二叉树
 // 给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历，

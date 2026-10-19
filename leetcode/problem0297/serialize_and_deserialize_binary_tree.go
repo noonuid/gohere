@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 297. 二叉树的序列化与反序列化

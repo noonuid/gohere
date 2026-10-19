@@ -6,7 +6,7 @@ package problem0543
 
 // 两节点之间路径的 长度 由它们之间边数表示。
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 type TreeNode = structure.TreeNode
 

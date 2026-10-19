@@ -1,7 +1,7 @@
 package problem0141
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 给你一个链表的头节点 head ，判断链表中是否有环。

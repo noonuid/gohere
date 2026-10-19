@@ -9,7 +9,7 @@ package problem0617
 // 注意: 合并过程必须从两个树的根节点开始。
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 type TreeNode = structure.TreeNode

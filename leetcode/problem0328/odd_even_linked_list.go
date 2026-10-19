@@ -1,6 +1,6 @@
 package problem0328
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 328. 奇偶链表
 

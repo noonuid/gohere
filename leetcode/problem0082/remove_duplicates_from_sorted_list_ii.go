@@ -1,7 +1,7 @@
 package problem0082
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 82. 删除排序链表中的重复元素 II

@@ -1,6 +1,6 @@
 package problem0104
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 104. 二叉树的最大深度
 

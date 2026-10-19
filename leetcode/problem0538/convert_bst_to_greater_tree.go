@@ -1,6 +1,6 @@
 package problem0538
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 538. 把二叉搜索树转换为累加树
 

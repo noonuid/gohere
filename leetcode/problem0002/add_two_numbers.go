@@ -1,6 +1,6 @@
 package problem0002
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 2. 两数相加
 

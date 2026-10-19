@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/noonuid/go/nowcoder/structure"
+	"github.com/noonuid/gohere/nowcoder/structure"
 )
 
 func testFramework(t *testing.T, testFn func(*ListNode) bool) {

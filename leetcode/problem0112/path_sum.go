@@ -7,7 +7,7 @@ package problem0112
 // 叶子节点 是指没有子节点的节点。
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 type TreeNode = structure.TreeNode

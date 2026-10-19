@@ -3,7 +3,7 @@ package problem0148
 import (
 	"sort"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 /**

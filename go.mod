@@ -1,4 +1,4 @@
-module github.com/noonuid/go
+module github.com/noonuid/gohere
 
 go 1.26.5
 

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 func testFramework(t *testing.T, testFunc func(head *ListNode) *ListNode) {

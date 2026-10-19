@@ -1,7 +1,7 @@
 package problem0019
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 19. 删除链表的倒数第 N 个结点

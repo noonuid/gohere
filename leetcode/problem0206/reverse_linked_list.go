@@ -1,7 +1,7 @@
 package problem0206
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // Definition for singly-linked list.

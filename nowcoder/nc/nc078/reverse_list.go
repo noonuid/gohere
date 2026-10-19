@@ -1,7 +1,7 @@
 package nc078
 
 import (
-	"github.com/noonuid/go/nowcoder/structure"
+	"github.com/noonuid/gohere/nowcoder/structure"
 )
 
 type ListNode = structure.ListNode

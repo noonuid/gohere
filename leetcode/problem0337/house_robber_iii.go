@@ -1,6 +1,6 @@
 package problem0337
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 337. 打家劫舍 III
 

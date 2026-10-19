@@ -1,6 +1,6 @@
 package problem0129
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 129. 求根节点到叶节点数字之和
 

@@ -1,7 +1,7 @@
 package problem0236
 
 import (
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 236. 二叉树的最近公共祖先

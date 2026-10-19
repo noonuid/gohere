@@ -1,7 +1,7 @@
 package problem0101
 
 import (
-	"github.com/noonuid/go/nowcoder/structure"
+	"github.com/noonuid/gohere/nowcoder/structure"
 )
 
 // 101. 对称二叉树

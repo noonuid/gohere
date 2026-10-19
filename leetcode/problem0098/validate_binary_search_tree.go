@@ -3,7 +3,7 @@ package problem0098
 import (
 	"math"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 98. 验证二叉搜索树

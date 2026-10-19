@@ -3,7 +3,7 @@ package problem0530
 import (
 	"math"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 530. 二叉搜索树的最小绝对差

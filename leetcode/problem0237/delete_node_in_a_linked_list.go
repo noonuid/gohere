@@ -1,6 +1,6 @@
 package problem0237
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 有一个单链表的 head，我们想删除它其中的一个节点 node。
 

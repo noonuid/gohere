@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 func TestProblem0230(t *testing.T) {

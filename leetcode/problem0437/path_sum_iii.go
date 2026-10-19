@@ -1,6 +1,6 @@
 package problem0437
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 437. 路径总和 III
 

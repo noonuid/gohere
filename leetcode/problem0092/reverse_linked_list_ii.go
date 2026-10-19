@@ -1,6 +1,6 @@
 package problem0092
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 92. 反转链表 II
 

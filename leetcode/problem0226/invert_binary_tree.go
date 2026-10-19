@@ -1,6 +1,6 @@
 package problem0226
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 226. 翻转二叉树
 

@@ -3,7 +3,7 @@ package problem0124
 import (
 	"math"
 
-	"github.com/noonuid/go/leetcode/structure"
+	"github.com/noonuid/gohere/leetcode/structure"
 )
 
 // 124. 二叉树中的最大路径和

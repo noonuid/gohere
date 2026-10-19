@@ -1,6 +1,6 @@
 package problem0086
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 // 86. 分隔链表
 

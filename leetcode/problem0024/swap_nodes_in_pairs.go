@@ -1,6 +1,6 @@
 package problem0024
 
-import "github.com/noonuid/go/leetcode/structure"
+import "github.com/noonuid/gohere/leetcode/structure"
 
 /**
  * Definition for singly-linked list.
