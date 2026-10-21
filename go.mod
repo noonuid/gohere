@@ -1,6 +1,6 @@
 module github.com/noonuid/gohere
 
-go 1.26.5
+go 1.27.0
 
 require (
 	github.com/Shopify/sarama v1.38.1
